@@ -1,23 +1,148 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
-    <title>Plain HTML site using GitLab Pages</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="https://pages.gitlab.io/plain-html/">Plain HTML Example</a>
-      <a href="https://gitlab.com/pages/plain-html/">Repository</a>
-      <a href="https://gitlab.com/pages/">Other Examples</a>
+<head>
+  <title>v-neko</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/v-neko.css">
+</head>
+<body>
+  <div id="app">
+    <h1>v-neko</h1>
+    <h4>Customize the neko you like!</h4>
+    <br/>
+    <div>
+      <p>请选择待染色的身体部位</p>
+      <select v-model="bodyPart">
+        <option>eye</option>
+        <option>nose</option>
+        <option>mouth</option>
+        <option>earinside</option>
+        <option>bowtie</option>
+        <option>head</option>
+        <option>facespot</option>
+        <option>body</option>
+        <option>belly</option>
+        <option>back</option>
+        <option>leg</option>
+        <option>foot</option>
+        <option>tail</option>
+        <option>tailcap</option>
+        <option>cap</option>
+        <option>collar</option>
+      </select>
     </div>
+    <br/>
+    <div>
+      <p>请选择颜色</p>
+      <select v-model="color">
+        <option>red</option>
+        <option>yellow</option>
+        <option>blue</option>
+      </select>
+    </div>
+    <br/>
+    <div>
+      //部件是{{bodyPart}}，颜色是{{color}}
+      <div id="neko">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     x="0px" y="0px"
+     viewBox="0 0 48 48"
+     style="enable-background:new 0 0 48 48;"
+     xml:space="preserve">
+    <rect class="bg" x="0" y="0" height="48" width="48" style="fill: #fff"></rect> <!--background-->
+    <g class="s-tail" fill='none' stroke="black" stroke-width="5">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" stroke-linecap="round" d="M35,35.5h5.9c2.1,0 3.8,-1.7 3.8,-3.8v-6.2"  /> <!--tail-->
+    </g>
+    <g class="s-body">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M9,20h30v18h-30z" fill="black" /> <!--body-->
+    </g>
+    <g class="s-head">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M9,18.5c0,-8.3 6.8,-15 15,-15s15,6.7 15,15H9z" fill="black" /> <!--head-->
+    </g>
+    <g class="s-foot">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M36.5,43m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" fill="black" /> <!--foot4-->
+    </g>
+    <g class="s-foot">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M29.5,43m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" fill="black" /> <!--foot3-->
+    </g>
+    <g class="s-foot">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M11.5,43m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" fill="black" /> <!--foot1-->
+    </g>
+    <g class="s-foot">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M18.5,43m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" fill="black" /> <!--foot2-->
+    </g>
+    <g class="s-leg">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M9,38h5v5h-5z" fill="black" /> <!--leg1-->
+    </g>
+    <g class="s-leg">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M16,38h5v5h-5z" fill="black" /> <!--leg2-->
+    </g>
+    <g class="s-leg">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M27,38h5v5h-5z" fill="black" /> <!--leg3-->
+    </g>
+    <g class="s-leg">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M34,38h5v5h-5z" fill="black" /> <!--leg4-->
+    </g>
+    <g class="s-ear">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M15.4,1l5.1000004,5.3l-6.3,2.8000002z" fill="black" /> <!--left-ear-->
+    </g>
+    <g class="s-ear">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M32.6,1l-5.0999985,5.3l6.299999,2.8000002z" fill="black" /> <!--right-ear-->
+    </g>
+    <g class="s-earinside">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M33.8,9.1l-4.7,-1.9l3.5,-6.2z" fill="black" /> <!--right-ear-inside-->
+    </g>
+    <g class="s-earinside">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M15.4,1l3.5,6.2l-4.7,1.9z" fill="black" /> <!--left-ear-inside-->
+    </g>
+    <g class="s-facespot">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M19.5,15.2a4.5,3.2 0,1 0,9 0a4.5,3.2 0,1 0,-9 0z" fill="black" />facespot
+    </g>
+    <g class="s-cap">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M27.2,3.8c-1,-0.2 -2.1,-0.3 -3.2,-0.3s-2.1,0.1 -3.2,0.3c0.2,1.3 1.5,2.2 3.2,2.2C25.6,6.1 26.9,5.1 27.2,3.8z" fill="black" /> <!--cap-->
+    </g>
+    <g class="s-mouth" fill="none" stroke="black" stroke-width="1.2">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" stroke-linecap="round" d="M29,14.3c-0.4,0.8 -1.3,1.4 -2.3,1.4c-1.4,0 -2.7,-1.3 -2.7,-2.7
+        M24,13c0,1.5 -1.2,2.7 -2.7,2.7c-1,0 -1.9,-0.5 -2.3,-1.4"/> <!--mouth-->
+    </g>
+    <g fill-opacity='0.5'>
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M16,38h5v1h-5z" fill="black" /> <!--leg2-shadow-->
+    </g>
+    <g fill-opacity='0.5'>
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M40,38l0,-5l-1,0l0,5z" fill="black" /> <!--tail-shadow-->
+    </g>
+    <g class="s-tailcap">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M42.2,25.5c0,-1.4 1.1,-2.5 2.5,-2.5s2.5,1.1 2.5,2.5H42.2z" fill="black" /> <!--tail-cap-->
+    </g>
+    <g class="s-belly">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M20.5,25c-3.6,0 -6.5,2.9 -6.5,6.5V38h13v-6.5C27,27.9 24.1,25 20.5,25z" fill="black" /> <!--belly-->
+    </g>
+    <g class="s-back">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M37.1,22c-1.1,0 -1.9,0.8 -1.9,1.9v5.6c0,1.1 0.8,1.9 1.9,1.9H39v-1.9v-5.6V22H37.1z" fill="black" /> <!--back-->
+    </g>
+    <g class="s-eye">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M30.5,11c0,1.7 -3,1.7 -3,0C27.5,9.3 30.5,9.3 30.5,11z" fill="black" /> <!--right-eye-->
+    </g>
+    <g class="s-eye">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M20.5,11c0,1.7 -3,1.7 -3,0C17.5,9.3 20.5,9.3 20.5,11z" fill="black" /> <!--left-eye-->
+    </g>
+    <g class="s-nose">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M25.2,13c0,1.3 -2.3,1.3 -2.3,0S25.2,11.7 25.2,13z" fill="black" /> <!--nose-->
+    </g>
+    <g class="s-collar">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M9,18.4h30v1.6h-30z" fill="black" /> <!--collar-->
+    </g>
+    <g class="s-bowtie">
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M29,16.8l-10,5l0,-5l10,5z" fill="black" /> <!--bowtie-->
+    </g>
+  </svg>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <button id="download-btn" @click="download">Download</button>
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="assets/js/v-neko.js"></script>
 
-    <h1>Hello World!</h1>
-
-    <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
-    </p>
-  </body>
+</body>
 </html>
-
