@@ -13,7 +13,7 @@
     <br/>
     <div>
       <p>请选择待染色的身体部位</p>
-      <select v-model="bodyPart">
+      <select v-model="neko.bodyPart">
         <option>eye</option>
         <option>nose</option>
         <option>mouth</option>
@@ -35,7 +35,7 @@
     <br/>
     <div>
       <p>请选择颜色</p>
-      <select v-model="color">
+      <select v-model="neko.color">
         <option v-for="color in colors" :value="color.value">
           {{color.name}}
         </option>
@@ -43,7 +43,7 @@
     </div>
     <br/>
     <div>
-      //部件是{{bodyPart}}，颜色是{{color}}
+      //部件是{{neko.bodyPart}}，颜色是{{neko.color}}
       <div id="neko">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      x="0px" y="0px"

@@ -1,45 +1,48 @@
 var app = new Vue({
     el: '#app',
     data: {
-        bodyPart: '',
-        color: ''
+        neko: {
+            bodyPart: '',
+            color: ''
+        }
     },
     methods: {
+        tint: function () {
+            if (this.neko.bodyPart.toString() === 'tail') {
+                $('.s-' + this.neko.bodyPart.toString()).find('path')
+                    .attr('stroke', this.neko.color);
+            } else {
+                $('.s-' + this.neko.bodyPart.toString()).find('path')
+                    .attr('fill', this.neko.color);
+            }
+        },
         download: function () {
-            let canvas = document.getElementById('canvas')
-            let context = canvas.getContext('2d')
-            let htmlParts = [document.getElementById('neko').innerHTML]
-            let mBlob = new Blob(htmlParts, {'type': 'image/svg+xml'})
-            let image = new Image()
-            image.src = window.URL.createObjectURL(mBlob)
+            let canvas = document.getElementById('canvas');
+            let context = canvas.getContext('2d');
+            let htmlParts = [document.getElementById('neko').innerHTML];
+            let mBlob = new Blob(htmlParts, {'type': 'image/svg+xml'});
+            let image = new Image();
+            image.src = window.URL.createObjectURL(mBlob);
             image.onload = function () {
-                canvas.width = image.width
-                canvas.height = image.height
-                context.drawImage(image, 0, 0)
-                let btn = document.createElement('a')
-                btn.download = 'MyNeko.png'
-                btn.href = canvas.toDataURL('image/png')
-                btn.click()
+                canvas.width = image.width;
+                canvas.height = image.height;
+                context.drawImage(image, 0, 0);
+                let btn = document.createElement('a');
+                btn.download = 'MyNeko.png';
+                btn.href = canvas.toDataURL('image/png');
+                btn.click();
             }
         }
     },
     watch: {
-        bodyPart: function (newVal, oldVal) {
-            if (newVal != '') {
-                this.bodyPart = newVal
-            }
-        },
-        color: function (newVal, oldVal) {
-            if (newVal != '') {
-                this.color = newVal
-            }
-            if (this.bodyPart.toString() == 'tail') {
-                $('.s-' + this.bodyPart.toString()).find('path')
-                    .attr('stroke', this.color)
-            } else {
-                $('.s-' + this.bodyPart.toString()).find('path')
-                    .attr('fill', this.color)
-            }
+        neko: {
+            handler: function (newVal) {
+                if (newVal.bodyPart !== '' && newVal.color !== '') {
+                    Object.assign(this.neko, newVal);
+                    this.tint();
+                }
+            },
+            deep: true
         }
     },
     computed: {
@@ -66,4 +69,4 @@ var app = new Vue({
             ]
         }
     }
-})
+});
