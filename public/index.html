@@ -36,9 +36,9 @@
     <div>
       <p>请选择颜色</p>
       <select v-model="color">
-        <option>red</option>
-        <option>yellow</option>
-        <option>blue</option>
+        <option v-for="color in colors" :value="color.value">
+          {{color.name}}
+        </option>
       </select>
     </div>
     <br/>

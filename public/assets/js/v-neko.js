@@ -41,5 +41,29 @@ var app = new Vue({
                     .attr('fill', this.color)
             }
         }
+    },
+    computed: {
+        colors: function () {
+            return [
+                {name: 'black', value: '#212121'},
+                {name: 'white', value: '#fff'},
+                {name: 'gray', value: '#616161'},
+                {name: 'brown', value: '#795548'},
+                {name: 'steel', value: '#90a4ae'},
+                {name: 'light-brown', value: '#6d4c41'},
+                {name: 'buff', value: '#fff9c4'},
+                {name: 'orange', value: '#ff8f00'},
+                {name: 'light-blue', value: '#29b6f6'},
+                {name: 'pink', value: '#ffcdd2'},
+                {name: 'purple', value: '#ce93d8'},
+                {name: 'green', value: '#43a047'},
+                {name: 'red', value: '#f44336'},
+                {name: 'blue', value: '#1976d2'},
+                {name: 'yellow', value: '#fdd835'},
+                {name: 'light-orange', value: '#fb8c00'},
+                {name: 'light-purple', value: '#f48fb1'},
+                {name: 'light-green', value: '#4caf50'},
+            ]
+        }
     }
 })
