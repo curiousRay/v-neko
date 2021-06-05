@@ -12,7 +12,7 @@
     <h4>Customize the neko you like!</h4>
     <br/>
     <div>
-      <p>请选择待染色的身体部位</p>
+      <p>Select body part you'd like to color:</p>
       <select v-model="neko.bodyPart">
         <option>eye</option>
         <option>nose</option>
@@ -35,7 +35,7 @@
     </div>
     <br/>
     <div>
-      <p>请选择颜色</p>
+      <p>Select the color:</p>
       <select v-model="neko.color">
         <option v-for="color in colors" :value="color.value">
           {{color.name}}
@@ -44,7 +44,7 @@
     </div>
     <br/>
     <div>
-      //部件是{{neko.bodyPart}}，颜色是{{neko.color}}
+      // Body part is {{neko.bodyPart}}, color is {{neko.color}}.
       <div id="neko">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      x="0px" y="0px"
